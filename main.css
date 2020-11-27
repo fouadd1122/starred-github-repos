@@ -32,4 +32,18 @@ table {
       background-color:#f5f5f5;
     }
 
+ul {
+   position: relative;
+   background: #FFF;
+   display: flex;
+   padding: 0px 560px;
+   border-radius: 50px;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 
+ul li {
+
+    list-style: none;
+    line-height: 50px;
+    margin: 0 5px; 
+}
