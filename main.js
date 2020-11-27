@@ -7,7 +7,7 @@ const firstButton = document.querySelector(".First");
 function getData(){
 
    let repoData= "", repoDescription = "";
-   let api = `https://api.github.com/search/repositories?q=created:>2020-10-12&sort=stars&order=desc&page=${pageNumber}`;
+   let api = `https://api.github.com/search/repositories?q=created:>2020-10-30&sort=stars&order=desc&page=${pageNumber}`;
 
       // get the repositories data with fetch function.
 
@@ -26,7 +26,7 @@ function getData(){
 
                 repoData += `
                 <tr>
-                <td> <img src="${repository.owner.avatar_url}" alt="Girl in a jacket" width="80" height="80"> <p>${repository.owner.login}</p>  </td>  <td>${repository.name}</td> <td>${repoDescription}</td><td>${repository.stargazers_count}</td><td>${repository.open_issues}</td>
+                <td> <img src="${repository.owner.avatar_url}" alt="" width="80" height="80"> <p>${repository.owner.login}</p>  </td>  <td>${repository.name}</td> <td>${repoDescription}</td><td>${repository.stargazers_count}</td><td>${repository.open_issues}</td>
                 </tr>
                 
                 ` ;
@@ -53,3 +53,27 @@ getData();
 
  
 
+// Pagination Elements
+
+ nextButton.addEventListener("click", () => {
+   pageNumber++;
+   
+   getData();
+});
+
+previousButton.addEventListener("click", () => {
+
+   pageNumber--;
+
+   //Check if the page API number requested greater or equal to 0.
+   pageNumber=(pageNumber >=1 ) ? pageNumber:1;
+   
+   getData();
+   
+});
+
+firstButton.addEventListener("click", () => {
+  pageNumber=1;
+  
+  getData();
+});
