@@ -6,7 +6,7 @@ const firstButton = document.querySelector(".First");
 
 function getData(){
 
-   let repoData= "", repoDescription = "";
+   let repoData = "", repoDescription = "";
    let api = `https://api.github.com/search/repositories?q=created:>2020-10-30&sort=stars&order=desc&page=${pageNumber}`;
 
       // get the repositories data with fetch function.
@@ -20,7 +20,7 @@ function getData(){
 
                  //Verify if the description of the repository is available.
 
-                repoDescription = (repository.description!== null) ? repository.description : "No description available for the repository";
+                repoDescription = (repository.description !== null) ? repository.description : "No description available for the repository";
                  
                  // store the repository details with html structure. 
 
@@ -37,7 +37,7 @@ function getData(){
                    
               //show the repositories details.
 
-              document.getElementById('reposData').innerHTML= repoData;
+              document.getElementById('reposData').innerHTML = repoData;
 
               
             } 
@@ -66,14 +66,14 @@ previousButton.addEventListener("click", () => {
    pageNumber--;
 
    //Check if the page API number requested greater or equal to 0.
-   pageNumber=(pageNumber >=1 ) ? pageNumber:1;
+   pageNumber = (pageNumber >=1 ) ? pageNumber:1;
    
    getData();
    
 });
 
 firstButton.addEventListener("click", () => {
-  pageNumber=1;
+  pageNumber = 1;
   
   getData();
 });
