@@ -6,7 +6,11 @@ const firstButton = document.querySelector(".First");
 
 function getData(){
 
+<<<<<<< HEAD
    let repoData = "", repoDescription = "";
+=======
+   let repoData= "", repoDescription = "";
+>>>>>>> 5820c087059317302f703394616197e034c9dc90
    let api = `https://api.github.com/search/repositories?q=created:>2020-10-30&sort=stars&order=desc&page=${pageNumber}`;
 
       // get the repositories data with fetch function.
@@ -66,14 +70,22 @@ previousButton.addEventListener("click", () => {
    pageNumber--;
 
    //Check if the page API number requested greater or equal to 0.
+<<<<<<< HEAD
    pageNumber = (pageNumber >=1 ) ? pageNumber:1;
+=======
+   pageNumber=(pageNumber >=1 ) ? pageNumber:1;
+>>>>>>> 5820c087059317302f703394616197e034c9dc90
    
    getData();
    
 });
 
 firstButton.addEventListener("click", () => {
+<<<<<<< HEAD
   pageNumber = 1;
+=======
+  pageNumber=1;
+>>>>>>> 5820c087059317302f703394616197e034c9dc90
   
   getData();
 });
